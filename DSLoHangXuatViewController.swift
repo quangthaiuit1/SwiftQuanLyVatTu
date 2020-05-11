@@ -1,11 +1,3 @@
-//
-//  DSLoHangXuatViewController.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/23/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 
@@ -84,12 +76,21 @@ class DSLoHangXuatViewController: UIViewController, UITableViewDelegate, UITable
             return UITableViewCell()
         }
         cell.fillData(dsLoHangXuats[indexPath.row])
+        cell.buttonXoa.tag = indexPath.row
+        cell.buttonXoa.addTarget(self, action: #selector(buttonXoaTapped), for: .touchUpInside)
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dsLoHangXuats.count
     }
- 
+    
+    @objc func buttonXoaTapped(_ sender: UIButton) {
+        let id = sender.tag
+        print("id \(id)")
+        print(dsLoHangXuats[id].idlohang)
+        //continued
+        
+    }
     
     @IBAction func closeTapped(_ sender: Any) {
          dismiss(animated: true)
