@@ -64,12 +64,12 @@ class IndexViewController: UIViewController {
     }
     @IBAction func chonPhieuNhapTam(_ sender: Any) {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let phieuNhapTamScreen = sb.instantiateViewController(identifier: "STPhieuNhapTam")
+        let phieuNhapTamScreen = sb.instantiateViewController(withIdentifier: "STPhieuNhapTam")
         self.navigationController?.pushViewController(phieuNhapTamScreen, animated: true)
     }
     @IBAction func chonPhieuXuatTam(_ sender: Any) {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let phieuXuatTamScreen = sb.instantiateViewController(identifier: "STPhieuXuatTam")
+        let phieuXuatTamScreen = sb.instantiateViewController(withIdentifier: "STPhieuXuatTam")
         self.navigationController?.pushViewController(phieuXuatTamScreen, animated: true)
     }
     

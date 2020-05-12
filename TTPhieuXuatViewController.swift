@@ -159,7 +159,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         return chiTietPhieuXuatTam.count
     }
     @objc func pencilTapped(_ sender: UIButton){
-        guard let xuatLoHangScreen = storyboard?.instantiateViewController(identifier: "STXuatLoHang") as? XuatLoHangViewController else {
+        guard let xuatLoHangScreen = storyboard?.instantiateViewController(withIdentifier: "STXuatLoHang") as? XuatLoHangViewController else {
             return
         }
         //Tạo liên kết delegate để delegate khác nil
@@ -179,7 +179,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         present(xuatLoHangScreen, animated: true)
     }
     @objc func eyeTapped(_ sender: UIButton){
-        guard let xuatLoHangScreen = storyboard?.instantiateViewController(identifier: "STDanhSachLoHangXuat") as? DSLoHangXuatViewController else {
+        guard let xuatLoHangScreen = storyboard?.instantiateViewController(withIdentifier: "STDanhSachLoHangXuat") as? DSLoHangXuatViewController else {
             return
         }
         xuatLoHangScreen.modalPresentationStyle = .overFullScreen

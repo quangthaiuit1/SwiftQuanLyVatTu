@@ -29,8 +29,13 @@ class ThongTinPhieuNhapTableViewCell: UITableViewCell {
         self.labelTenVatTu.text = data.tenVatTu
         self.labelSoLuongChungTu.text = String(describing: data.soluongChungtu)
         self.labelSoLuongThucTe.text = String(describing: data.soluongThucte)
-        self.buttonView.setImage(UIImage(systemName: "eye"), for: .normal)
-        self.buttonAdd.setImage(UIImage(systemName: "plus"), for: .normal)
+        if #available(iOS 13.0, *) {
+            self.buttonView.setImage(UIImage(systemName: "eye"), for: .normal)
+            self.buttonAdd.setImage(UIImage(systemName: "plus"), for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

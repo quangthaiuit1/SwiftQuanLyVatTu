@@ -158,7 +158,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
     }
     
     @objc func tapThemLoHang(_ sender: UIButton) {
-        guard let themLoHangScreen = storyboard?.instantiateViewController(identifier: "STThemLoHang") as? ThemLoHangViewController else {
+        guard let themLoHangScreen = storyboard?.instantiateViewController(withIdentifier: "STThemLoHang") as? ThemLoHangViewController else {
             return
         }
         themLoHangScreen.modalPresentationStyle = .overFullScreen
@@ -171,7 +171,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
     
     
     @IBAction func viewTapped(_ sender: UIButton) {
-        guard let danhSachLoHangScreen = storyboard?.instantiateViewController(identifier: "STXemDanhSachLoHang") as? DanhSachLoHangViewController else {
+        guard let danhSachLoHangScreen = storyboard?.instantiateViewController(withIdentifier: "STXemDanhSachLoHang") as? DanhSachLoHangViewController else {
             return
         }
         danhSachLoHangScreen.modalPresentationStyle = .overFullScreen

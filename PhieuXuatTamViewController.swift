@@ -8,6 +8,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
     var listIdPhieuXuatTamString = ""
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.title = "Phiếu xuất tạm"
         phieuXuatTams.removeAll()
@@ -25,6 +26,10 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
             "dt": "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
         ]
         let url = URL.url + "phieuxuattam"
+        
+        //Test time
+        let startTime = CFAbsoluteTimeGetCurrent()
+        
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -52,6 +57,8 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
                             }
                             DispatchQueue.main.async {
                                 self.tableViewPhieuXuatTam.reloadData()
+                                let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+                                print("Thời gian request phiếu xuất tạm: \(timeElapsed) s.")
                             }
                         } else {
                             print("bad json")
@@ -105,7 +112,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
         //Tao storyboard
         let st = UIStoryboard.init(name: "Main", bundle: nil)
         //Tao man hinh
-        let thongTinPhieuXuatTamScreen = st.instantiateViewController(identifier: "STThongTinPhieuXuatTam") as? TTPhieuXuatViewController
+        let thongTinPhieuXuatTamScreen = st.instantiateViewController(withIdentifier: "STThongTinPhieuXuatTam") as? TTPhieuXuatViewController
         //Gán gía trị cho title info chi tiết phiếu xuất
         thongTinPhieuXuatTamScreen?.noinhan = phieuXuatTams[indexPath.row].noinhan
         thongTinPhieuXuatTamScreen?.maphieu = phieuXuatTams[indexPath.row].maphieu

@@ -41,6 +41,7 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
         ]
 //        print("\(IndexViewController.tuNgay),\(IndexViewController.denNgay)")
         let url = URL.url + "phieunhaptam"
+        let startTime = CFAbsoluteTimeGetCurrent()
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -67,6 +68,8 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
                             }
                             DispatchQueue.main.async {
                                 self.tableViewPhieuNhapTam.reloadData()
+                                let endTime = CFAbsoluteTimeGetCurrent() - startTime
+                                print("Thời gian request phiếu nhập tạm: \(endTime)")
                             }
                         } else {
                             print("bad json")
@@ -104,7 +107,7 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
         //Tao storyboard
         let st = UIStoryboard.init(name: "Main", bundle: nil)
         //Tao man hinh
-        let thongTinPhieuNhapScreen = (st.instantiateViewController(identifier: "STThongTinPhieuNhapTam") as? ThongTinPhieuNhapTamViewController)!
+        let thongTinPhieuNhapScreen = (st.instantiateViewController(withIdentifier: "STThongTinPhieuNhapTam") as? ThongTinPhieuNhapTamViewController)!
         //Du lieu chinh
         thongTinPhieuNhapScreen.txtNhaCungCap = phieuNhapTams[indexPath.row].nhacungcap
         thongTinPhieuNhapScreen.txtNgayNhap = phieuNhapTams[indexPath.row].ngay

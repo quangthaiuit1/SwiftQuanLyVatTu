@@ -29,8 +29,13 @@ class TTPhieuXuatTamTableViewCell: UITableViewCell {
         self.labelTenVT.text = data.tenVatTu
         self.labelSoLuongYeuCau.text = String(data.soluongYeuCau)
         self.labelSoLuongThucXuat.text = String(data.soluongThucXuat)
-        self.buttonEye.setImage(UIImage(systemName: "eye"), for: .normal)
-        self.buttonPencil.setImage(UIImage(systemName: "pencil"), for: .normal)
+        if #available(iOS 13.0, *) {
+            self.buttonEye.setImage(UIImage(systemName: "eye"), for: .normal)
+            self.buttonPencil.setImage(UIImage(systemName: "pencil"), for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
