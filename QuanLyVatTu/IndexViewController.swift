@@ -25,7 +25,13 @@ class IndexViewController: UIViewController {
         self.navigationItem.title = ("Chương trình vật tư")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchDate))
-            
+        
+        //init from date to date
+        DispatchQueue.main.async {
+            VariablesStatic.DEN_NGAY = self.getCurrentDate()
+            VariablesStatic.TU_NGAY = self.getLast7Days()
+        }
+        
         //Chon ngay
         datePickerTuNgay = UIDatePicker()
         datePickerDenNgay = UIDatePicker()
@@ -38,6 +44,28 @@ class IndexViewController: UIViewController {
         //Xử lý ẩn popup datePicker
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    //Get current Date
+    func getCurrentDate() -> String {
+        let dateFormatter : DateFormatter = DateFormatter()
+        //  dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:ss"
+        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
+        let currentDate = Date()
+        let dateString = dateFormatter.string(from: currentDate)
+//        let interval = date.timeIntervalSince1970
+        return dateString
+    }
+    //Get last 7 days starting from today
+    func getLast7Days() -> String{
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
+        let currentDate = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = -200
+        let last7DaysTemp = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+        let last7Days = dateFormatter.string(from: last7DaysTemp!)
+        return last7Days
     }
     
     //Chon ngay nhap
@@ -64,7 +92,7 @@ class IndexViewController: UIViewController {
     }
     @IBAction func chonPhieuNhapTam(_ sender: Any) {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        let phieuNhapTamScreen = sb.instantiateViewController(withIdentifier: "STPhieuNhapTam")
+        let phieuNhapTamScreen = sb.instantiateViewController(withIdentifier: "STPhieuNhapTam") as! PhieuNhapTamViewController
         self.navigationController?.pushViewController(phieuNhapTamScreen, animated: true)
     }
     @IBAction func chonPhieuXuatTam(_ sender: Any) {
@@ -75,7 +103,6 @@ class IndexViewController: UIViewController {
     
     @IBAction func buttonDongYTapped(_ sender: Any) {
         VariablesStatic.TU_NGAY = textFieldTuNgay.text!
-        print(VariablesStatic.TU_NGAY)
         VariablesStatic.DEN_NGAY = textFieldDenNgay.text!
         viewSearchDate.removeFromSuperview()
     }

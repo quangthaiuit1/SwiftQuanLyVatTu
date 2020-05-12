@@ -17,7 +17,6 @@
 		0E5042C2244FF51B0013F17A /* DanhSachLoHangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5042C1244FF51B0013F17A /* DanhSachLoHangViewController.swift */; };
 		0E5042C4244FF5AE0013F17A /* DanhSachLoHangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5042C3244FF5AE0013F17A /* DanhSachLoHangTableViewCell.swift */; };
 		0E505F37243B25C3004DE30F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E505F36243B25C3004DE30F /* LoginViewController.swift */; };
-		0E51F5DB24529C4100907A03 /* SendRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51F5DA24529C4100907A03 /* SendRequestProtocol.swift */; };
 		0E57646E244BECC400A65DB8 /* ChonNgayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E57646D244BECC400A65DB8 /* ChonNgayViewController.swift */; };
 		0EB1ED37245199370027D721 /* DSLoHangXuatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED36245199370027D721 /* DSLoHangXuatViewController.swift */; };
 		0EB1ED3924519EC00027D721 /* DSLoHangXuatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED3824519EC00027D721 /* DSLoHangXuatTableViewCell.swift */; };
@@ -51,7 +50,6 @@
 		0E5042C1244FF51B0013F17A /* DanhSachLoHangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanhSachLoHangViewController.swift; sourceTree = "<group>"; };
 		0E5042C3244FF5AE0013F17A /* DanhSachLoHangTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanhSachLoHangTableViewCell.swift; sourceTree = "<group>"; };
 		0E505F36243B25C3004DE30F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		0E51F5DA24529C4100907A03 /* SendRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendRequestProtocol.swift; sourceTree = "<group>"; };
 		0E57646D244BECC400A65DB8 /* ChonNgayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChonNgayViewController.swift; sourceTree = "<group>"; };
 		0EB1ED36245199370027D721 /* DSLoHangXuatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoHangXuatViewController.swift; sourceTree = "<group>"; };
 		0EB1ED3824519EC00027D721 /* DSLoHangXuatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoHangXuatTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				0EFF07CE243B08DF0026397D /* ViewController.swift */,
 				0E505F36243B25C3004DE30F /* LoginViewController.swift */,
 				0EB1ED3A2451A57C0027D721 /* Entities.swift */,
-				0E51F5DA24529C4100907A03 /* SendRequestProtocol.swift */,
 				0EE106DF2446DA0B0028234D /* Param.swift */,
 				0EFF07D0243B08DF0026397D /* Main.storyboard */,
 				0EFF07D3243B08E00026397D /* Assets.xcassets */,
@@ -304,7 +301,6 @@
 				0E5042C4244FF5AE0013F17A /* DanhSachLoHangTableViewCell.swift in Sources */,
 				0EFF07CB243B08DF0026397D /* AppDelegate.swift in Sources */,
 				0E13C926244E02310067A33E /* TTPhieuXuatViewController.swift in Sources */,
-				0E51F5DB24529C4100907A03 /* SendRequestProtocol.swift in Sources */,
 				0E505F37243B25C3004DE30F /* LoginViewController.swift in Sources */,
 				0E03DEC7244E9D550005F267 /* XuatLoHangViewController.swift in Sources */,
 				0EB1ED3B2451A57C0027D721 /* Entities.swift in Sources */,

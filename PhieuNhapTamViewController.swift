@@ -1,11 +1,3 @@
-//
-//  PhieuNhapTamViewController.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/7/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 
@@ -35,12 +27,12 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
             "database": VariablesStatic.CHI_NHANH,
             "token": VariablesStatic.TOKEN
         ]
+       let dt = "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
         let params: [String: Any] = [
             "cm": "dsphieunhaptam",
-            "dt": "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
+            "dt": dt
         ]
-//        print("\(IndexViewController.tuNgay),\(IndexViewController.denNgay)")
-        let url = URL.url + "phieunhaptam"
+        let url = VariablesStatic.URL + "phieunhaptam"
         let startTime = CFAbsoluteTimeGetCurrent()
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
@@ -165,7 +157,7 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
             "cm": "chuyenphieunhaptam",
             "dt": listIdPhieuNhapTamString
         ]
-        let url = URL.url + "phieunhaptam"
+        let url = VariablesStatic.URL + "phieunhaptam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

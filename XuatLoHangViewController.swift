@@ -29,6 +29,7 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         self.labelSoLuongYeuCau.text = String(slYeuCau!)
         self.labelSoLuongThucXuat.text = String(slThucXuat! + tongSoLuongThucXuat!)
+        self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! + slThucXuat!
         sendPostMethod()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
@@ -40,9 +41,9 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
     
     func sendPostMethod(){
         let headers: HTTPHeaders = [
-            "Content-Type": "application/x-www-form-urlencoded",
-            "database": "HCM",
-            "token": "123"
+            "Content-Type": VariablesStatic.CONTENT_TYPE,
+            "database": VariablesStatic.CHI_NHANH,
+            "token": VariablesStatic.TOKEN
         ]
         
         let dt = String(idChiTietPhieuXuat!) + "," + ngay!
@@ -51,7 +52,7 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
             "dt" : dt
         ]
         
-        let url = URL.url + "phieuxuattam"
+        let url = VariablesStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -157,15 +158,25 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
                     print("TextField is Cell \(row) is Empty")
                 }
                 else{
-                    let id = Int(cell!.labelId.text!)
-                    let malh = cell!.labelMaLH.text!
-                    let ngaynhap = cell!.labelNgayNhap.text!
-                    let ngayhethan = cell!.labelNgayHetHan.text!
                     let soluong = Double(cell!.textFieldSoLuong.text!)
-                    let xuatLoHangTemp = XuatLoHang(id!,malh,ngaynhap,ngayhethan,soluong!)
-                    self.xuatLoHangsSend.append(xuatLoHangTemp)
-
-                    self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! + self.slThucXuat! + soluong!
+                    self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! + soluong!
+                    //Kiểm tra lô hàng quá số lượng
+                    if tongSoLuongThucXuat! > slYeuCau!{
+                        self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! - soluong!
+                        let thatBai = UIAlertController(title: "Thông báo", message: "Vượt quá số lượng", preferredStyle: .alert)
+                        let okTapped = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        thatBai.addAction(okTapped)
+                        self.present(thatBai, animated: true, completion: nil)
+                    }
+                    else {
+                        let id = Int(cell!.labelId.text!)
+                        let malh = cell!.labelMaLH.text!
+                        let ngaynhap = cell!.labelNgayNhap.text!
+                        let ngayhethan = cell!.labelNgayHetHan.text!
+                        
+                        let xuatLoHangTemp = XuatLoHang(id!,malh,ngaynhap,ngayhethan,soluong!)
+                        self.xuatLoHangsSend.append(xuatLoHangTemp)
+                    }
                 }
             }
             row += 1

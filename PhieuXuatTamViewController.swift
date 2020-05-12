@@ -21,11 +21,12 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
             "database": VariablesStatic.CHI_NHANH,
             "token": VariablesStatic.TOKEN
         ]
+        let dt = "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
         let params: [String: Any] = [
             "cm": "dsphieuxuattam",
-            "dt": "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
+            "dt": dt
         ]
-        let url = URL.url + "phieuxuattam"
+        let url = VariablesStatic.URL + "phieuxuattam"
         
         //Test time
         let startTime = CFAbsoluteTimeGetCurrent()
@@ -161,7 +162,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
             "cm": "chuyenphieuxuattam",
             "dt": listIdPhieuXuatTamString
         ]
-        let url = URL.url + "phieuxuattam"
+        let url = VariablesStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

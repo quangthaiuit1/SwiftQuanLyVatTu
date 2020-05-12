@@ -85,7 +85,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
             "dt" : String(idPhieuXuatTam!)
         ]
         
-        let url = URL.url + "phieuxuattam"
+        let url = VariablesStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -212,7 +212,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
             "dt" : json!
         ]
 //        print(json!)
-        let url = URL.url + "phieuxuattam"
+        let url = VariablesStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
