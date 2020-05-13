@@ -1,11 +1,3 @@
-//
-//  PhieuXuatTamTableViewCell.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/20/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 class PhieuXuatTamTableViewCell: UITableViewCell {

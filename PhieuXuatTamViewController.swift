@@ -82,13 +82,9 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellPhieuXuatTam",for: indexPath) as? PhieuXuatTamTableViewCell else {
             return UITableViewCell()
         }
-        
-        //Test dữ liệu tạm
-//        let phieuXuatTamTest = PhieuXuatTam("7593","20/02/1995","00009/PLVT", "KHO NHIÊN LIỆU", true ,"PX BỘT GIẶT 1")
         cell.fillData(phieuXuatTams[indexPath.row])
         cell.buttonChuyenPhieu.tag = indexPath.row
         cell.buttonChuyenPhieu.addTarget(self, action: #selector(chuyenPhieuTapped), for: .touchUpInside)
-//        cell.fillData(phieuXuatTamTest)
         return cell
     }
     
@@ -103,8 +99,6 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return phieuXuatTams.count
-        //TEST
-//        return 5
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

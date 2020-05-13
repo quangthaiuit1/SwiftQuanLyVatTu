@@ -21,6 +21,8 @@
 		0EB1ED37245199370027D721 /* DSLoHangXuatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED36245199370027D721 /* DSLoHangXuatViewController.swift */; };
 		0EB1ED3924519EC00027D721 /* DSLoHangXuatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED3824519EC00027D721 /* DSLoHangXuatTableViewCell.swift */; };
 		0EB1ED3B2451A57C0027D721 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED3A2451A57C0027D721 /* Entities.swift */; };
+		0EC3E09F246BC28100433FF0 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3E09E246BC28100433FF0 /* Combine.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0EC3E0A1246BC2D600433FF0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3E0A0246BC2D500433FF0 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0ECC0332243C020400AC3D33 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 0ECC0331243C020400AC3D33 /* ModalView */; };
 		0ECC033A243C44BE00AC3D33 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC0339243C44BE00AC3D33 /* IndexViewController.swift */; };
 		0ECC033C243C56C600AC3D33 /* PhieuNhapTamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC033B243C56C600AC3D33 /* PhieuNhapTamViewController.swift */; };
@@ -54,6 +56,8 @@
 		0EB1ED36245199370027D721 /* DSLoHangXuatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoHangXuatViewController.swift; sourceTree = "<group>"; };
 		0EB1ED3824519EC00027D721 /* DSLoHangXuatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoHangXuatTableViewCell.swift; sourceTree = "<group>"; };
 		0EB1ED3A2451A57C0027D721 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		0EC3E09E246BC28100433FF0 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = System/Library/Frameworks/Combine.framework; sourceTree = SDKROOT; };
+		0EC3E0A0246BC2D500433FF0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		0ECC0339243C44BE00AC3D33 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		0ECC033B243C56C600AC3D33 /* PhieuNhapTamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhieuNhapTamViewController.swift; sourceTree = "<group>"; };
 		0ECC033D243C56DA00AC3D33 /* PhieuXuatTamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhieuXuatTamViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC3E0A1246BC2D600433FF0 /* SwiftUI.framework in Frameworks */,
+				0EC3E09F246BC28100433FF0 /* Combine.framework in Frameworks */,
 				0EFF820EC963B7A01D8C85B2 /* Pods_QuanLyVatTu.framework in Frameworks */,
 				0ECC0332243C020400AC3D33 /* ModalView in Frameworks */,
 			);
@@ -158,6 +164,8 @@
 		3FEB489889F0D4E94043A27F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EC3E0A0246BC2D500433FF0 /* SwiftUI.framework */,
+				0EC3E09E246BC28100433FF0 /* Combine.framework */,
 				9A96D8831261539C8943836F /* Pods_QuanLyVatTu.framework */,
 			);
 			name = Frameworks;
@@ -392,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -446,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
