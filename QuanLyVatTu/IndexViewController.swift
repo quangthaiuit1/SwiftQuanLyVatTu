@@ -24,7 +24,7 @@ class IndexViewController: UIViewController {
 
         self.navigationItem.title = ("Chương trình vật tư")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchDate))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchDate))
         
         //init from date to date
         DispatchQueue.main.async {

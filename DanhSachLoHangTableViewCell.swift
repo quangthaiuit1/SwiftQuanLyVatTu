@@ -34,7 +34,7 @@ class DanhSachLoHangTableViewCell: UITableViewCell {
         self.labelHetHan.text = data.ngayhethan
         self.labelSoLuong.text = String(data.sllohang)
         if #available(iOS 13.0, *) {
-            self.buttonDelete.setImage(UIImage.init(systemName: "trash.fill"), for: .normal)
+            self.buttonDelete.setImage(UIImage.init(named: "in"), for: .normal)
         } else {
             // Fallback on earlier versions
         }

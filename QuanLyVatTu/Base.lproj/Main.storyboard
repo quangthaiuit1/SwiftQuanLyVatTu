@@ -210,6 +210,81 @@
         <!--Index View Controller-->
         <scene sceneID="AMe-Zb-1fM">
             <objects>
+                <view contentMode="scaleToFill" id="jam-Yy-9J4">
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="295"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ ngày:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPC-jv-3zy">
+                            <rect key="frame" x="80" y="20" width="105" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="gs9-6x-HrH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-F3-ufs">
+                            <rect key="frame" x="80" y="51" width="125" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="Kbw-s4-5Ky"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đến ngày:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-pb-DpE">
+                            <rect key="frame" x="80" y="105" width="105" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="fBa-Le-MgD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-tA-h8s">
+                            <rect key="frame" x="80" y="136" width="125" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G53-U7-WKO">
+                            <rect key="frame" x="102.5" y="190" width="80" height="40"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fBL-3q-ALE"/>
+                                <constraint firstAttribute="height" constant="40" id="jVN-2N-woF"/>
+                            </constraints>
+                            <state key="normal" title="Đồng ý">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="buttonDongYTapped:" destination="pPH-Rv-WiL" eventType="touchUpInside" id="pLM-Vx-78n"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.34279438785046867" green="0.35200576867972966" blue="0.37963991116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="CxD-tA-h8s" firstAttribute="trailing" secondItem="KJ2-F3-ufs" secondAttribute="trailing" id="7bn-sC-LUj"/>
+                        <constraint firstItem="KJ2-F3-ufs" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="BA8-mh-XwI"/>
+                        <constraint firstItem="CxD-tA-h8s" firstAttribute="leading" secondItem="bG6-pb-DpE" secondAttribute="leading" id="EOf-FC-o9b"/>
+                        <constraint firstItem="fPC-jv-3zy" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="EiE-HC-Lu0"/>
+                        <constraint firstItem="CxD-tA-h8s" firstAttribute="top" secondItem="bG6-pb-DpE" secondAttribute="bottom" constant="10" id="Fvo-L7-Bkn"/>
+                        <constraint firstItem="G53-U7-WKO" firstAttribute="centerX" secondItem="jam-Yy-9J4" secondAttribute="centerX" id="PCW-RQ-LEh"/>
+                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="bG6-pb-DpE" secondAttribute="trailing" constant="100" id="Vhb-0I-J22"/>
+                        <constraint firstItem="fPC-jv-3zy" firstAttribute="top" secondItem="k98-pa-svn" secondAttribute="top" constant="20" id="gC5-cB-GSc"/>
+                        <constraint firstItem="KJ2-F3-ufs" firstAttribute="top" secondItem="fPC-jv-3zy" secondAttribute="bottom" constant="10" id="jm3-W6-EEp"/>
+                        <constraint firstItem="bG6-pb-DpE" firstAttribute="top" secondItem="KJ2-F3-ufs" secondAttribute="bottom" constant="20" id="kpB-f2-jpi"/>
+                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="KJ2-F3-ufs" secondAttribute="trailing" constant="80" id="o5G-gz-GQa"/>
+                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="fPC-jv-3zy" secondAttribute="trailing" constant="100" id="r3X-8C-Ive"/>
+                        <constraint firstItem="G53-U7-WKO" firstAttribute="top" secondItem="CxD-tA-h8s" secondAttribute="bottom" constant="20" id="yFN-av-mBI"/>
+                        <constraint firstItem="bG6-pb-DpE" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="zpk-hX-bGb"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="k98-pa-svn"/>
+                </view>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYU-Q7-MCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STIndex" id="pPH-Rv-WiL" customClass="IndexViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PD6-oX-lgb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -288,87 +363,13 @@
                         <outlet property="viewSearchDate" destination="jam-Yy-9J4" id="dRm-oH-amC"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hYU-Q7-MCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="jam-Yy-9J4">
-                    <rect key="frame" x="0.0" y="0.0" width="285" height="295"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ ngày:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPC-jv-3zy">
-                            <rect key="frame" x="80" y="20" width="105" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="gs9-6x-HrH"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-F3-ufs">
-                            <rect key="frame" x="80" y="51" width="125" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="34" id="Kbw-s4-5Ky"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đến ngày:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG6-pb-DpE">
-                            <rect key="frame" x="80" y="105" width="105" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="fBa-Le-MgD"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-tA-h8s">
-                            <rect key="frame" x="80" y="136" width="125" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G53-U7-WKO">
-                            <rect key="frame" x="102.5" y="190" width="80" height="40"/>
-                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fBL-3q-ALE"/>
-                                <constraint firstAttribute="height" constant="40" id="jVN-2N-woF"/>
-                            </constraints>
-                            <state key="normal" title="Đồng ý">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="buttonDongYTapped:" destination="pPH-Rv-WiL" eventType="touchUpInside" id="pLM-Vx-78n"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.34279438785046867" green="0.35200576867972966" blue="0.37963991116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="CxD-tA-h8s" firstAttribute="trailing" secondItem="KJ2-F3-ufs" secondAttribute="trailing" id="7bn-sC-LUj"/>
-                        <constraint firstItem="KJ2-F3-ufs" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="BA8-mh-XwI"/>
-                        <constraint firstItem="CxD-tA-h8s" firstAttribute="leading" secondItem="bG6-pb-DpE" secondAttribute="leading" id="EOf-FC-o9b"/>
-                        <constraint firstItem="fPC-jv-3zy" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="EiE-HC-Lu0"/>
-                        <constraint firstItem="CxD-tA-h8s" firstAttribute="top" secondItem="bG6-pb-DpE" secondAttribute="bottom" constant="10" id="Fvo-L7-Bkn"/>
-                        <constraint firstItem="G53-U7-WKO" firstAttribute="centerX" secondItem="jam-Yy-9J4" secondAttribute="centerX" id="PCW-RQ-LEh"/>
-                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="bG6-pb-DpE" secondAttribute="trailing" constant="100" id="Vhb-0I-J22"/>
-                        <constraint firstItem="fPC-jv-3zy" firstAttribute="top" secondItem="k98-pa-svn" secondAttribute="top" constant="20" id="gC5-cB-GSc"/>
-                        <constraint firstItem="KJ2-F3-ufs" firstAttribute="top" secondItem="fPC-jv-3zy" secondAttribute="bottom" constant="10" id="jm3-W6-EEp"/>
-                        <constraint firstItem="bG6-pb-DpE" firstAttribute="top" secondItem="KJ2-F3-ufs" secondAttribute="bottom" constant="20" id="kpB-f2-jpi"/>
-                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="KJ2-F3-ufs" secondAttribute="trailing" constant="80" id="o5G-gz-GQa"/>
-                        <constraint firstItem="k98-pa-svn" firstAttribute="trailing" secondItem="fPC-jv-3zy" secondAttribute="trailing" constant="100" id="r3X-8C-Ive"/>
-                        <constraint firstItem="G53-U7-WKO" firstAttribute="top" secondItem="CxD-tA-h8s" secondAttribute="bottom" constant="20" id="yFN-av-mBI"/>
-                        <constraint firstItem="bG6-pb-DpE" firstAttribute="leading" secondItem="k98-pa-svn" secondAttribute="leading" constant="80" id="zpk-hX-bGb"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="k98-pa-svn"/>
-                </view>
             </objects>
             <point key="canvasLocation" x="1263" y="115"/>
         </scene>
         <!--Phieu Nhap Tam View Controller-->
         <scene sceneID="RW8-7y-8rW">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldT-mR-b6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STPhieuNhapTam" id="7hD-Xo-4X3" customClass="PhieuNhapTamViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iJk-hu-JBs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -626,13 +627,13 @@
                         <outlet property="tableViewPhieuNhapTam" destination="pch-10-xh2" id="CsC-sm-M8w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ldT-mR-b6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="114.69265367316342"/>
         </scene>
         <!--Thong Tin Phieu Nhap Tam View Controller-->
         <scene sceneID="tyc-Q1-Lq7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDd-MU-kS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STThongTinPhieuNhapTam" id="cUj-nh-2Ym" customClass="ThongTinPhieuNhapTamViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ph1-kF-pRq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -766,7 +767,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="eye" catalog="system"/>
+                                                            <state key="normal" image="out"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOe-GN-rW6">
                                                             <rect key="frame" x="45" y="0.0" width="30" height="30"/>
@@ -775,7 +776,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="uJ4-0t-49e"/>
                                                             </constraints>
                                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="plus" catalog="system"/>
+                                                            <state key="normal" image="in"/>
                                                             <connections>
                                                                 <action selector="tapThemLoHang:" destination="cUj-nh-2Ym" eventType="touchUpInside" id="vto-kY-Xwx"/>
                                                             </connections>
@@ -922,13 +923,13 @@
                         <outlet property="tableViewThongTinPhieuNhapTam" destination="S9H-LP-aev" id="zrb-q8-D8g"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eDd-MU-kS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2504.8000000000002" y="114.69265367316342"/>
         </scene>
         <!--Them Lo Hang View Controller-->
         <scene sceneID="hGn-E4-Gui">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBg-c8-J18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STThemLoHang" id="F74-ga-0cf" customClass="ThemLoHangViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dRX-6B-rbv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -951,8 +952,8 @@
                                             <action selector="dismissThemLoHangTapped:" destination="F74-ga-0cf" eventType="touchUpInside" id="XrY-Oo-3yW"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Lb-sR-rBe">
-                                        <rect key="frame" x="295" y="6" width="30" height="27.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="out" translatesAutoresizingMaskIntoConstraints="NO" id="1Lb-sR-rBe">
+                                        <rect key="frame" x="295" y="5" width="30" height="30"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4JW-92-ANn"/>
@@ -1099,13 +1100,13 @@
                         <outlet property="textFieldSoLuongNhap" destination="eXc-lR-XBD" id="wBE-cN-6R0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBg-c8-J18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3117.5999999999999" y="114.69265367316342"/>
         </scene>
         <!--Danh Sach Lo Hang View Controller-->
         <scene sceneID="XIz-Wz-CKD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7g-P7-FLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STXemDanhSachLoHang" id="LGB-ec-a0V" customClass="DanhSachLoHangViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YW-pH-hnh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1132,12 +1133,12 @@
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfU-wj-bfn">
-                                                            <rect key="frame" x="292.5" y="111" width="19.5" height="22"/>
+                                                            <rect key="frame" x="252" y="111" width="60" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="fXb-zw-OXL"/>
                                                             </constraints>
                                                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="trash.fill" catalog="system"/>
+                                                            <state key="normal" image="Checkbox"/>
                                                             <connections>
                                                                 <action selector="deleteTapped:" destination="bcr-HX-AJ8" eventType="touchUpInside" id="xHH-cy-ELu"/>
                                                             </connections>
@@ -1275,8 +1276,8 @@
                                             <action selector="closeTapped:" destination="LGB-ec-a0V" eventType="touchUpInside" id="XKd-gf-WPu"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-6C-w8E">
-                                        <rect key="frame" x="285" y="6" width="30" height="27.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="out" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-6C-w8E">
+                                        <rect key="frame" x="285" y="5" width="30" height="30"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WoF-ZW-TtJ"/>
@@ -1311,13 +1312,13 @@
                         <outlet property="tableViewDanhSachLH" destination="Ep1-WA-K8M" id="10B-IZ-BRe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z7g-P7-FLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3736.8000000000002" y="115.59220389805098"/>
         </scene>
         <!--Chon Ngay View Controller-->
         <scene sceneID="NOa-oJ-pEd">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gS1-0n-di1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STChonNgay" id="hoe-VA-InM" customClass="ChonNgayViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8L-YN-5cJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1379,13 +1380,13 @@
                         <outlet property="pickerChonNgay" destination="hip-mA-Xjx" id="kuJ-BV-w64"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gS1-0n-di1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5106" y="116"/>
         </scene>
         <!--Phieu Xuat Tam View Controller-->
         <scene sceneID="Jsm-GW-Xhf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHm-PK-WIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STPhieuXuatTam" id="mSE-5s-CNF" customClass="PhieuXuatTamViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k8e-Gr-38A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1624,13 +1625,13 @@
                         <outlet property="tableViewPhieuXuatTam" destination="WIj-cB-6fu" id="DSI-lx-X8O"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qHm-PK-WIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5760.8000000000002" y="117.39130434782609"/>
         </scene>
         <!--Phieu Xuat View Controller-->
         <scene sceneID="6n2-DZ-dqh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7X4-Oa-cHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STThongTinPhieuXuatTam" id="ePA-Gn-Isl" customClass="TTPhieuXuatViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9F-qa-Jxc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1735,7 +1736,7 @@
                                                                 <constraint firstAttribute="width" constant="50" id="G7X-I0-WIA"/>
                                                             </constraints>
                                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="eye" catalog="system"/>
+                                                            <state key="normal" image="out"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHB-Mp-FBB">
                                                             <rect key="frame" x="50" y="0.0" width="50" height="50"/>
@@ -1745,7 +1746,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="pencil" catalog="system"/>
+                                                            <state key="normal" image="in"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -1913,7 +1914,6 @@
                         <outlet property="tableViewChiTietPXT" destination="YzS-Hr-EpT" id="MT4-38-A2w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7X4-Oa-cHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Wvk-GB-t8n">
                     <rect key="frame" x="0.0" y="0.0" width="356" height="400"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1926,6 +1926,7 @@
         <!--Lo Hang Xuat View Controller-->
         <scene sceneID="tVt-Y7-ORT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhd-nU-ET2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STDanhSachLoHangXuat" id="Ot2-ve-6QF" customClass="DSLoHangXuatViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NEx-ix-DCP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1966,7 +1967,7 @@
                                                                 <constraint firstAttribute="width" constant="30" id="iEh-el-ZhZ"/>
                                                             </constraints>
                                                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="trash.fill" catalog="system"/>
+                                                            <state key="normal" image="Checkbox"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GET-GY-5E5">
                                                             <rect key="frame" x="80" y="86.5" width="90" height="20.5"/>
@@ -2094,8 +2095,8 @@
                                             <outlet property="delegate" destination="Ot2-ve-6QF" id="6bR-dH-XqG"/>
                                         </connections>
                                     </tableView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z3E-c6-3qY">
-                                        <rect key="frame" x="285" y="6" width="30" height="27.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="out" translatesAutoresizingMaskIntoConstraints="NO" id="Z3E-c6-3qY">
+                                        <rect key="frame" x="285" y="5" width="30" height="30"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="HKe-Sx-4cv"/>
@@ -2130,13 +2131,13 @@
                         <outlet property="tableViewDSLoHangXuat" destination="kVT-fQ-LBM" id="hgv-lL-ihv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhd-nU-ET2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7060" y="114.69265367316342"/>
         </scene>
         <!--Xuat Lo Hang View Controller-->
         <scene sceneID="aPX-sq-uAp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vR-8c-bEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="STXuatLoHang" id="7Gk-LG-9Hu" customClass="XuatLoHangViewController" customModule="QuanLyVatTu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3gj-ak-nH8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -2417,8 +2418,8 @@
                                             <action selector="closeTapped:" destination="7Gk-LG-9Hu" eventType="touchUpInside" id="o2c-Ae-i9v"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-yx-ziD">
-                                        <rect key="frame" x="293" y="6" width="30" height="27.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="out" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-yx-ziD">
+                                        <rect key="frame" x="293" y="5" width="30" height="30"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FPc-fq-3Uk"/>
@@ -2461,7 +2462,6 @@
                         <outlet property="tableViewXuatLoHang" destination="3Nh-DI-tE7" id="d3v-3G-kUP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3vR-8c-bEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7725.6000000000004" y="115.59220389805098"/>
         </scene>
@@ -2489,13 +2489,10 @@
         <image name="Checkbox" width="60" height="60"/>
         <image name="UnCheckbox" width="60" height="60"/>
         <image name="chitietphieunhap" width="450" height="450"/>
-        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
-        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="in" width="512" height="512"/>
         <image name="logo" width="164" height="79"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="out" width="512" height="512"/>
         <image name="phieunhap" width="610" height="610"/>
         <image name="phieuxuat" width="512" height="512"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>

@@ -30,8 +30,8 @@ class TTPhieuXuatTamTableViewCell: UITableViewCell {
         self.labelSoLuongYeuCau.text = String(data.soluongYeuCau)
         self.labelSoLuongThucXuat.text = String(data.soluongThucXuat)
         if #available(iOS 13.0, *) {
-            self.buttonEye.setImage(UIImage(systemName: "eye"), for: .normal)
-            self.buttonPencil.setImage(UIImage(systemName: "pencil"), for: .normal)
+            self.buttonEye.setImage(UIImage.init(named: "out"), for: .normal)
+            self.buttonPencil.setImage(UIImage.init(named: "in"), for: .normal)
         } else {
             // Fallback on earlier versions
         }

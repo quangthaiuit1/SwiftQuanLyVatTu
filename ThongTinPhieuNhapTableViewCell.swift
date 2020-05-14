@@ -30,8 +30,8 @@ class ThongTinPhieuNhapTableViewCell: UITableViewCell {
         self.labelSoLuongChungTu.text = String(describing: data.soluongChungtu)
         self.labelSoLuongThucTe.text = String(describing: data.soluongThucte)
         if #available(iOS 13.0, *) {
-            self.buttonView.setImage(UIImage(systemName: "eye"), for: .normal)
-            self.buttonAdd.setImage(UIImage(systemName: "plus"), for: .normal)
+            self.buttonView.setImage(UIImage.init(named: "out"), for: .normal)
+            self.buttonAdd.setImage(UIImage.init(named: "in"), for: .normal)
         } else {
             // Fallback on earlier versions
         }

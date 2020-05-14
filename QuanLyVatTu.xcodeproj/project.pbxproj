@@ -29,7 +29,6 @@
 		0ECC033E243C56DA00AC3D33 /* PhieuXuatTamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC033D243C56DA00AC3D33 /* PhieuXuatTamViewController.swift */; };
 		0ECC0340243C5F3C00AC3D33 /* PhieuNhapTamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC033F243C5F3C00AC3D33 /* PhieuNhapTamTableViewCell.swift */; };
 		0EE09A4E246507E200837F5E /* VariablesStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE09A4D246507E200837F5E /* VariablesStatic.swift */; };
-		0EE106E02446DA0B0028234D /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE106DF2446DA0B0028234D /* Param.swift */; };
 		0EF0D4E124580D0E00691AEF /* ThemLoHangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0D4E024580D0E00691AEF /* ThemLoHangViewController.swift */; };
 		0EFF07CB243B08DF0026397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF07CA243B08DF0026397D /* AppDelegate.swift */; };
 		0EFF07CD243B08DF0026397D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF07CC243B08DF0026397D /* SceneDelegate.swift */; };
@@ -63,7 +62,6 @@
 		0ECC033D243C56DA00AC3D33 /* PhieuXuatTamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhieuXuatTamViewController.swift; sourceTree = "<group>"; };
 		0ECC033F243C5F3C00AC3D33 /* PhieuNhapTamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhieuNhapTamTableViewCell.swift; sourceTree = "<group>"; };
 		0EE09A4D246507E200837F5E /* VariablesStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablesStatic.swift; sourceTree = "<group>"; };
-		0EE106DF2446DA0B0028234D /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
 		0EF0D4E024580D0E00691AEF /* ThemLoHangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemLoHangViewController.swift; sourceTree = "<group>"; };
 		0EFF07C7243B08DF0026397D /* QuanLyVatTu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyVatTu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFF07CA243B08DF0026397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				0EFF07CE243B08DF0026397D /* ViewController.swift */,
 				0E505F36243B25C3004DE30F /* LoginViewController.swift */,
 				0EB1ED3A2451A57C0027D721 /* Entities.swift */,
-				0EE106DF2446DA0B0028234D /* Param.swift */,
 				0EFF07D0243B08DF0026397D /* Main.storyboard */,
 				0EFF07D3243B08E00026397D /* Assets.xcassets */,
 				0EFF07D5243B08E00026397D /* LaunchScreen.storyboard */,
@@ -315,7 +312,6 @@
 				0EB1ED3924519EC00027D721 /* DSLoHangXuatTableViewCell.swift in Sources */,
 				0E57646E244BECC400A65DB8 /* ChonNgayViewController.swift in Sources */,
 				0E1AB4B62440677E00EA2C71 /* ThongTinPhieuNhapTamViewController.swift in Sources */,
-				0EE106E02446DA0B0028234D /* Param.swift in Sources */,
 				0E13C922244D7F230067A33E /* PhieuXuatTamTableViewCell.swift in Sources */,
 				0EE09A4E246507E200837F5E /* VariablesStatic.swift in Sources */,
 				0EB1ED37245199370027D721 /* DSLoHangXuatViewController.swift in Sources */,
