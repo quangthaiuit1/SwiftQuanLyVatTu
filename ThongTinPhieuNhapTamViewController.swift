@@ -65,9 +65,9 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
     
     func sendPostMethod(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         
         let params:[String: Any] = [
@@ -75,7 +75,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
             "dt" : String(describing: idPhieuNhapTam!)
         ]
         
-        let url = VariablesStatic.URL +  "phieunhaptam"
+        let url = GenericsStatic.URL +  "phieunhaptam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -198,9 +198,9 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
         let json = String(data: encodedData!, encoding: String.Encoding.utf8)
         //Send params
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         
         let params:[String: Any] = [
@@ -208,7 +208,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
             "dt" : json!
         ]
 //        print(json!)
-        let url = VariablesStatic.URL +  "phieunhaptam"
+        let url = GenericsStatic.URL +  "phieunhaptam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

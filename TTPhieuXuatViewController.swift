@@ -75,9 +75,9 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
     
     func sendPostRequest(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         
         let params:[String: Any] = [
@@ -85,7 +85,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
             "dt" : String(idPhieuXuatTam!)
         ]
         
-        let url = VariablesStatic.URL + "phieuxuattam"
+        let url = GenericsStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):
@@ -203,16 +203,16 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         let encodedData = try? JSONEncoder().encode(chiTietPhieuXuatTamSend)
         let json = String(data: encodedData!, encoding: String.Encoding.utf8)
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         let params:[String: Any] = [
             "cm" : "luuphieuxuattam",
             "dt" : json!
         ]
 //        print(json!)
-        let url = VariablesStatic.URL + "phieuxuattam"
+        let url = GenericsStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

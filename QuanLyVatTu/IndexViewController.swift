@@ -1,11 +1,3 @@
-//
-//  IndexViewController.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/7/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 class IndexViewController: UIViewController, UITextFieldDelegate {
@@ -21,15 +13,13 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.title = ("Chương trình vật tư")
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchDate))
-        
         //init from date to date
         DispatchQueue.main.async {
-            VariablesStatic.DEN_NGAY = self.getCurrentDate()
-            VariablesStatic.TU_NGAY = self.getLast7Days()
+            GenericsStatic.DEN_NGAY = self.getCurrentDateString()
+            GenericsStatic.TU_NGAY = self.getLast7Days()
         }
         textFieldTuNgay.delegate = self
 //        //Chon ngay
@@ -59,38 +49,26 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     //Get current Date
-    func getCurrentDate() -> String {
-        let dateFormatter : DateFormatter = DateFormatter()
-        //  dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:ss"
-        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
-        let currentDate = Date()
-        let dateString = dateFormatter.string(from: currentDate)
-//        let interval = date.timeIntervalSince1970
+    func getCurrentDateString() -> String {
+        let dateString = GenericsStatic.getDateFormatter().string(from: GenericsStatic.getCurrentDate())
         return dateString
     }
     //Get last 7 days starting from today
     func getLast7Days() -> String{
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
-        let currentDate = Date()
         var dateComponent = DateComponents()
         dateComponent.day = -200
-        let last7DaysTemp = Calendar.current.date(byAdding: dateComponent, to: currentDate)
-        let last7Days = dateFormatter.string(from: last7DaysTemp!)
+        let last7DaysTemp = Calendar.current.date(byAdding: dateComponent, to: GenericsStatic.getCurrentDate())
+        let last7Days = GenericsStatic.getDateFormatter().string(from: last7DaysTemp!)
         return last7Days
     }
     
     //Chon ngay nhap
     @objc func dateChangedTuNgay(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        textFieldTuNgay.text = dateFormatter.string(from: datePicker.date)
+        textFieldTuNgay.text = GenericsStatic.getDateFormatter().string(from: datePicker.date)
         view.endEditing(true)
     }
     @objc func dateChangedDenNgay(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        textFieldDenNgay.text = dateFormatter.string(from: datePicker.date)
+        textFieldDenNgay.text = GenericsStatic.getDateFormatter().string(from: datePicker.date)
         view.endEditing(true)
     }
     //Bỏ popup chọn ngày
@@ -114,8 +92,8 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buttonDongYTapped(_ sender: Any) {
-        VariablesStatic.TU_NGAY = textFieldTuNgay.text!
-        VariablesStatic.DEN_NGAY = textFieldDenNgay.text!
+        GenericsStatic.TU_NGAY = textFieldTuNgay.text!
+        GenericsStatic.DEN_NGAY = textFieldDenNgay.text!
         viewSearchDate.removeFromSuperview()
     }
 }

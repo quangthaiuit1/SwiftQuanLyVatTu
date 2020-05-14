@@ -17,16 +17,16 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
     
     func sendPostRequest () {
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
-        let dt = "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
+        let dt = "\(GenericsStatic.TU_NGAY),\(GenericsStatic.DEN_NGAY)"
         let params: [String: Any] = [
             "cm": "dsphieuxuattam",
             "dt": dt
         ]
-        let url = VariablesStatic.URL + "phieuxuattam"
+        let url = GenericsStatic.URL + "phieuxuattam"
         
         //Test time
         let startTime = CFAbsoluteTimeGetCurrent()
@@ -85,6 +85,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
         cell.fillData(phieuXuatTams[indexPath.row])
         cell.buttonChuyenPhieu.tag = indexPath.row
         cell.buttonChuyenPhieu.addTarget(self, action: #selector(chuyenPhieuTapped), for: .touchUpInside)
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -148,15 +149,15 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
     }
     func chuyenPhieu(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         let params: [String: Any] = [
             "cm": "chuyenphieuxuattam",
             "dt": listIdPhieuXuatTamString
         ]
-        let url = VariablesStatic.URL + "phieuxuattam"
+        let url = GenericsStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

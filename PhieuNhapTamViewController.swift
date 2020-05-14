@@ -12,6 +12,7 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Phiếu nhập tạm"
         tableViewPhieuNhapTam.dataSource = self
         tableViewPhieuNhapTam.delegate = self
@@ -23,16 +24,16 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
     
     private func sendPostRequest(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
-       let dt = "\(VariablesStatic.TU_NGAY),\(VariablesStatic.DEN_NGAY)"
+       let dt = "\(GenericsStatic.TU_NGAY),\(GenericsStatic.DEN_NGAY)"
         let params: [String: Any] = [
             "cm": "dsphieunhaptam",
             "dt": dt
         ]
-        let url = VariablesStatic.URL + "phieunhaptam"
+        let url = GenericsStatic.URL + "phieunhaptam"
         let startTime = CFAbsoluteTimeGetCurrent()
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
@@ -60,6 +61,9 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
                             }
                             DispatchQueue.main.async {
                                 self.tableViewPhieuNhapTam.reloadData()
+                                self.tableViewPhieuNhapTam.layoutIfNeeded()
+                                self.tableViewPhieuNhapTam.beginUpdates()
+                                self.tableViewPhieuNhapTam.endUpdates()
                                 let endTime = CFAbsoluteTimeGetCurrent() - startTime
                                 print("Thời gian request phiếu nhập tạm: \(endTime)")
                             }
@@ -80,7 +84,6 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return phieuNhapTams.count
-//        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,6 +95,7 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
         cell.buttonChuyenPhieu.addTarget(self, action: #selector(chuyenPhieuTapped(_:)), for: .touchUpInside)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Tao storyboard
         let st = UIStoryboard.init(name: "Main", bundle: nil)
@@ -146,15 +150,15 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
     }
     func chuyenPhieu(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         let params: [String: Any] = [
             "cm": "chuyenphieunhaptam",
             "dt": listIdPhieuNhapTamString
         ]
-        let url = VariablesStatic.URL + "phieunhaptam"
+        let url = GenericsStatic.URL + "phieunhaptam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

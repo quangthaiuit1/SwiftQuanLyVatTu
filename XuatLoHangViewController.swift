@@ -43,9 +43,9 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
     
     func sendPostMethod(){
         let headers: HTTPHeaders = [
-            "Content-Type": VariablesStatic.CONTENT_TYPE,
-            "database": VariablesStatic.CHI_NHANH,
-            "token": VariablesStatic.TOKEN
+            "Content-Type": GenericsStatic.CONTENT_TYPE,
+            "database": GenericsStatic.CHI_NHANH,
+            "token": GenericsStatic.TOKEN
         ]
         
         let dt = String(idChiTietPhieuXuat!) + "," + ngay!
@@ -54,7 +54,7 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
             "dt" : dt
         ]
         
-        let url = VariablesStatic.URL + "phieuxuattam"
+        let url = GenericsStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
             case .success(let value):

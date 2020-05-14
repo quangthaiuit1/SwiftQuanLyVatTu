@@ -41,15 +41,14 @@ class ThemLoHangViewController: UIViewController {
     }
     //Chon ngay nhap
        @objc func dateChangedNgayNhap(datePicker: UIDatePicker){
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        let dateFormatter = GenericsStatic.getDateFormatter()
+           
+            print(type(of: dateFormatter))
            textFieldNgayNhap.text = dateFormatter.string(from: datePicker.date)
            view.endEditing(true)
        }
        @objc func dateChangedNgayHetHan(datePicker: UIDatePicker){
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-           textFieldNgayHetHan.text = dateFormatter.string(from: datePicker.date)
+        textFieldNgayHetHan.text = GenericsStatic.getDateFormatter().string(from: datePicker.date)
            view.endEditing(true)
        }
     //Bỏ popup chọn ngày

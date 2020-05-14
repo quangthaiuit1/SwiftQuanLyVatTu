@@ -1,5 +1,4 @@
 import UIKit
-//import ModalView
 import Alamofire
 
 
@@ -50,9 +49,9 @@ class LoginViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
     }
     @IBAction func login(_ sender: Any) {
-        VariablesStatic.CHI_NHANH = handleChonChiNhanh()
-        VariablesStatic.CONTENT_TYPE = "application/x-www-form-urlencoded"
-        VariablesStatic.TOKEN = "123"
+        GenericsStatic.CHI_NHANH = handleChonChiNhanh()
+        GenericsStatic.CONTENT_TYPE = "application/x-www-form-urlencoded"
+        GenericsStatic.TOKEN = "123"
 //        let headers: HTTPHeaders = [
 //            "Content-Type": VariablesStatic.CONTENT_TYPE,
 //            "database": VariablesStatic.CHI_NHANH,
