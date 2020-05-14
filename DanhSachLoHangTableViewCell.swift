@@ -1,11 +1,3 @@
-//
-//  DanhSachLoHangTableViewCell.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/22/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 class DanhSachLoHangTableViewCell: UITableViewCell {
@@ -36,7 +28,7 @@ class DanhSachLoHangTableViewCell: UITableViewCell {
         if #available(iOS 13.0, *) {
             self.buttonDelete.setImage(UIImage.init(systemName: "trash.fill"), for: .normal)
         } else {
-            // Fallback on earlier versions
+            self.buttonDelete.setImage(UIImage.init(named: "delete24_1"), for: .normal)
         }
     }
     

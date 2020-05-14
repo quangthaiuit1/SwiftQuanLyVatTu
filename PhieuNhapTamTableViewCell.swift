@@ -1,33 +1,17 @@
-//
-//  PhieuNhapTamTableViewCell.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/7/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 class PhieuNhapTamTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var imagePhieuNhapTam: UIImageView!
-    
     @IBOutlet weak var buttonDatao: UIButton!
     @IBOutlet weak var labelNhaCungCap: UILabel!
 //    @IBOutlet weak var buttonChuyenPhieu: UIButton!
-    
     @IBOutlet weak var buttonKiemTra: UIButton!
-    
     @IBOutlet weak var buttonChuyenPhieu: UIButton!
-    
     @IBOutlet weak var labelId: UILabel!
-    
     @IBOutlet weak var labelMaPhieu: UILabel!
-    
     @IBOutlet weak var labelNgayNhap: UILabel!
     @IBOutlet weak var labelLoaiPhieu: UILabel!
-    
     @IBOutlet weak var btnDaTao: UIButton!
     
     override func awakeFromNib() {

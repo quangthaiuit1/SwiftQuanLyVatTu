@@ -207,7 +207,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
             "cm" : "luuphieunhaptam",
             "dt" : json!
         ]
-        print(json!)
+//        print(json!)
         let url = VariablesStatic.URL +  "phieunhaptam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {

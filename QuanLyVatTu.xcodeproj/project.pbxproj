@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,6 @@
 		0EB1ED3B2451A57C0027D721 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1ED3A2451A57C0027D721 /* Entities.swift */; };
 		0EC3E09F246BC28100433FF0 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3E09E246BC28100433FF0 /* Combine.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0EC3E0A1246BC2D600433FF0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3E0A0246BC2D500433FF0 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		0ECC0332243C020400AC3D33 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 0ECC0331243C020400AC3D33 /* ModalView */; };
 		0ECC033A243C44BE00AC3D33 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC0339243C44BE00AC3D33 /* IndexViewController.swift */; };
 		0ECC033C243C56C600AC3D33 /* PhieuNhapTamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC033B243C56C600AC3D33 /* PhieuNhapTamViewController.swift */; };
 		0ECC033E243C56DA00AC3D33 /* PhieuXuatTamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC033D243C56DA00AC3D33 /* PhieuXuatTamViewController.swift */; };
@@ -85,7 +84,6 @@
 				0EC3E0A1246BC2D600433FF0 /* SwiftUI.framework in Frameworks */,
 				0EC3E09F246BC28100433FF0 /* Combine.framework in Frameworks */,
 				0EFF820EC963B7A01D8C85B2 /* Pods_QuanLyVatTu.framework in Frameworks */,
-				0ECC0332243C020400AC3D33 /* ModalView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +197,6 @@
 			);
 			name = QuanLyVatTu;
 			packageProductDependencies = (
-				0ECC0331243C020400AC3D33 /* ModalView */,
 			);
 			productName = QuanLyVatTu;
 			productReference = 0EFF07C7243B08DF0026397D /* QuanLyVatTu.app */;
@@ -230,7 +227,6 @@
 			);
 			mainGroup = 0EFF07BE243B08DF0026397D;
 			packageReferences = (
-				0ECC0330243C020400AC3D33 /* XCRemoteSwiftPackageReference "modal-view" */,
 			);
 			productRefGroup = 0EFF07C8243B08DF0026397D /* Products */;
 			projectDirPath = "";
@@ -526,25 +522,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0ECC0330243C020400AC3D33 /* XCRemoteSwiftPackageReference "modal-view" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/diniska/modal-view";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0ECC0331243C020400AC3D33 /* ModalView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0ECC0330243C020400AC3D33 /* XCRemoteSwiftPackageReference "modal-view" */;
-			productName = ModalView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0EFF07BF243B08DF0026397D /* Project object */;
 }

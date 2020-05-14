@@ -1,11 +1,3 @@
-//
-//  ThongTinPhieuNhapTableViewCell.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/13/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 class ThongTinPhieuNhapTableViewCell: UITableViewCell {
@@ -33,7 +25,9 @@ class ThongTinPhieuNhapTableViewCell: UITableViewCell {
             self.buttonView.setImage(UIImage(systemName: "eye"), for: .normal)
             self.buttonAdd.setImage(UIImage(systemName: "plus"), for: .normal)
         } else {
-            // Fallback on earlier versions
+            self.buttonView.setImage(UIImage.init(named: "view24"), for: .normal)
+            self.buttonView.tintColor = UIColor.red
+            self.buttonAdd.setImage(UIImage.init(named: "plus"), for: .normal)
         }
         
     }

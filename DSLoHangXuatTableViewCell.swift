@@ -1,14 +1,12 @@
 import UIKit
 
 class DSLoHangXuatTableViewCell: UITableViewCell {
-
     @IBOutlet weak var imageXuatLoHang: UIImageView!
     @IBOutlet weak var labelMaLH: UILabel!
     @IBOutlet weak var labelNgayNhap: UILabel!
     @IBOutlet weak var labelHetHan: UILabel!
     @IBOutlet weak var labelSoLuong: UILabel!
     @IBOutlet weak var buttonXoa: UIButton!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +20,12 @@ class DSLoHangXuatTableViewCell: UITableViewCell {
         self.labelSoLuong.text = String(describing: data.sllohang)
         //        self.buttonOkXuat.setImage(UIImage.init(named: "UnCheckbox"), for: .normal)
         //        self.buttonOkXuat.setImage(UIImage.init(named: "Checkbox"), for: .selected)
+       if #available(iOS 13.0, *) {
+            self.buttonXoa.setImage(UIImage.init(systemName: "trash.fill"), for: .normal)
+       }else {
+            self.buttonXoa.setImage(UIImage.init(named: "delete24_1"), for: .normal)
         }
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

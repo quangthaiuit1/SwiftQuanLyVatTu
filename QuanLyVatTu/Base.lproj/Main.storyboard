@@ -1093,6 +1093,7 @@
                         <viewLayoutGuide key="safeArea" id="nX3-rG-fKi"/>
                     </view>
                     <connections>
+                        <outlet property="imageClose" destination="1Lb-sR-rBe" id="JoW-Ko-9SN"/>
                         <outlet property="textFieldMaLH" destination="U93-lH-p4x" id="mqF-J2-c66"/>
                         <outlet property="textFieldNgayHetHan" destination="Y5C-aS-Rec" id="1NN-4J-9ta"/>
                         <outlet property="textFieldNgayNhap" destination="pXC-o4-AH0" id="Udd-sp-uaN"/>
@@ -1308,6 +1309,7 @@
                         <viewLayoutGuide key="safeArea" id="KAC-13-KVR"/>
                     </view>
                     <connections>
+                        <outlet property="imageClose" destination="xBd-6C-w8E" id="DeF-zX-WXk"/>
                         <outlet property="tableViewDanhSachLH" destination="Ep1-WA-K8M" id="10B-IZ-BRe"/>
                     </connections>
                 </viewController>
@@ -2127,6 +2129,7 @@
                         <viewLayoutGuide key="safeArea" id="2so-vj-w67"/>
                     </view>
                     <connections>
+                        <outlet property="imageClose" destination="Z3E-c6-3qY" id="ilt-h8-mvc"/>
                         <outlet property="tableViewDSLoHangXuat" destination="kVT-fQ-LBM" id="hgv-lL-ihv"/>
                     </connections>
                 </viewController>
@@ -2456,6 +2459,7 @@
                         <viewLayoutGuide key="safeArea" id="kVF-yy-eyf"/>
                     </view>
                     <connections>
+                        <outlet property="imageClose" destination="VeA-yx-ziD" id="iKg-WG-p71"/>
                         <outlet property="labelSoLuongThucXuat" destination="CGc-AW-lPH" id="QeS-r7-Y8Y"/>
                         <outlet property="labelSoLuongYeuCau" destination="QWR-8h-VS8" id="o1R-Ga-qeN"/>
                         <outlet property="tableViewXuatLoHang" destination="3Nh-DI-tE7" id="d3v-3G-kUP"/>

@@ -5,10 +5,11 @@ class DSLoHangXuatViewController: UIViewController, UITableViewDelegate, UITable
 
     var dsLoHangXuats = [XuatLoHang]()
     @IBOutlet weak var tableViewDSLoHangXuat: UITableView!
+    @IBOutlet weak var imageClose: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.imageClose.image = UIImage.init(named: "close24")
     }
 //    func sendPostMethod(){
 //        let headers: HTTPHeaders = [

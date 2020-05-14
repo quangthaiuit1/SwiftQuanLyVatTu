@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndexViewController: UIViewController {
+class IndexViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var viewSearchDate: UIView!
     @IBOutlet weak var textFieldTuNgay: UITextField!
@@ -31,8 +31,8 @@ class IndexViewController: UIViewController {
             VariablesStatic.DEN_NGAY = self.getCurrentDate()
             VariablesStatic.TU_NGAY = self.getLast7Days()
         }
-        
-        //Chon ngay
+        textFieldTuNgay.delegate = self
+//        //Chon ngay
         datePickerTuNgay = UIDatePicker()
         datePickerDenNgay = UIDatePicker()
         datePickerTuNgay?.datePickerMode = .date
@@ -46,6 +46,18 @@ class IndexViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    //Set default current date for textfield date
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        if textFieldTuNgay.text!.isEmpty {
+            textFieldTuNgay.text = dateFormatter.string(from: Date())
+        }
+        if  textFieldDenNgay.text!.isEmpty {
+             textFieldDenNgay.text = dateFormatter.string(from: Date())
+        }
+        return true
+    }
     //Get current Date
     func getCurrentDate() -> String {
         let dateFormatter : DateFormatter = DateFormatter()

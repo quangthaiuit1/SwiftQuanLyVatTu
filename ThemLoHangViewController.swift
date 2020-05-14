@@ -1,11 +1,3 @@
-//
-//  ThemLoHangViewController.swift
-//  QuanLyVatTu
-//
-//  Created by Macintosh HD on 4/28/20.
-//  Copyright © 2020 Macintosh HD. All rights reserved.
-//
-
 import UIKit
 
 protocol sendDSLoHangToThongTinPNT {
@@ -19,6 +11,7 @@ class ThemLoHangViewController: UIViewController {
     @IBOutlet weak var textFieldSoLuongNhap: UITextField!
     @IBOutlet weak var textFieldNgayNhap: UITextField!
     @IBOutlet weak var textFieldNgayHetHan: UITextField!
+    @IBOutlet weak var imageClose: UIImageView!
     
     private var datePickerNgayNhap: UIDatePicker?
     private var datePickerNgayHetHan: UIDatePicker?
@@ -41,6 +34,7 @@ class ThemLoHangViewController: UIViewController {
         datePickerNgayHetHan?.addTarget(self, action: #selector(ThemLoHangViewController.dateChangedNgayHetHan(datePicker:)), for: .valueChanged)
         textFieldNgayNhap.inputView = datePickerNgayNhap
         textFieldNgayHetHan.inputView = datePickerNgayHetHan
+        self.imageClose.image = UIImage.init(named: "close24")
         //Xử lý ẩn popup datePicker
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)

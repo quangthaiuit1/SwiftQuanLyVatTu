@@ -18,6 +18,7 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
     @IBOutlet weak var labelSoLuongYeuCau: UILabel!
     @IBOutlet weak var labelSoLuongThucXuat: UILabel!
     @IBOutlet weak var tableViewXuatLoHang: UITableView!
+    @IBOutlet weak var imageClose: UIImageView!
     var idPhieuXuatTam: Int?
     var idChiTietPhieuXuat: Int?
     var ngay: String?
@@ -29,6 +30,7 @@ class XuatLoHangViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         self.labelSoLuongYeuCau.text = String(slYeuCau!)
         self.labelSoLuongThucXuat.text = String(slThucXuat! + tongSoLuongThucXuat!)
+        self.imageClose.image = UIImage.init(named: "close24")
         self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! + slThucXuat!
         sendPostMethod()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))

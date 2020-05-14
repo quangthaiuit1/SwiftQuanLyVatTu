@@ -90,9 +90,6 @@ class PhieuNhapTamViewController: UIViewController, UITableViewDataSource, UITab
         cell.fillData(phieuNhapTams[indexPath.row])
         cell.buttonChuyenPhieu.tag = indexPath.row
         cell.buttonChuyenPhieu.addTarget(self, action: #selector(chuyenPhieuTapped(_:)), for: .touchUpInside)
-//        Test dữ liệu tạm
-//        let phieuNhapTamTest = PhieuNhapTam("145609","20/02/1995","AB156/CD","BB",true ,false ,"Công ty cổ phần bột giặt LIX")
-//        cell.fillData(phieuNhapTamTest)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
