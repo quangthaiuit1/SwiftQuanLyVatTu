@@ -148,6 +148,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         }
         cell.fillData(chiTietPhieuXuatTam[indexPath.row])
         
+        
         // Xử lý nút trong cell
         cell.buttonEye.tag = indexPath.row
         cell.buttonEye.addTarget(self, action: #selector(eyeTapped(_:)), for: .touchUpInside)
@@ -243,4 +244,3 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 }
-

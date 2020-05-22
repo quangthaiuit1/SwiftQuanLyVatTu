@@ -79,9 +79,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellPhieuXuatTam",for: indexPath) as? PhieuXuatTamTableViewCell else {
-            return UITableViewCell()
-        }
+         let cell = tableView.dequeueReusableCell(withIdentifier: "CellPhieuXuatTam",for: indexPath) as! PhieuXuatTamTableViewCell 
         cell.fillData(phieuXuatTams[indexPath.row])
         cell.buttonChuyenPhieu.tag = indexPath.row
         cell.buttonChuyenPhieu.addTarget(self, action: #selector(chuyenPhieuTapped), for: .touchUpInside)

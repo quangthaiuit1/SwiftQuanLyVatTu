@@ -11,7 +11,7 @@ class XuatLoHangTableViewCell: UITableViewCell {
     @IBOutlet weak var labelId: UILabel!
     @IBOutlet weak var labelNgayHetHan: UILabel!
     
-    
+    var delegateCell : XuatLohangTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +27,8 @@ class XuatLoHangTableViewCell: UITableViewCell {
         self.labelNgayHetHan.text = data.ngayhethan
 //        self.buttonOkXuat.setImage(UIImage.init(named: "UnCheckbox"), for: .normal)
 //        self.buttonOkXuat.setImage(UIImage.init(named: "Checkbox"), for: .selected)
+        
+        self.buttonOkXuat.addTarget(self, action: #selector(buttonOkTapped(_:)), for: .touchUpInside)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,4 +36,20 @@ class XuatLoHangTableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func buttonOkTapped (_ sender: UIButton) {
+        if self.buttonOkXuat.isSelected {
+            self.buttonOkXuat.isSelected = false
+        }
+        else {
+            self.buttonOkXuat.isSelected = true
+        }
+        if delegateCell != nil {
+            self.delegateCell?.passCellToTTPX(self)
+        }
+    }
+    
+}
+
+protocol XuatLohangTableViewCellDelegate: AnyObject {
+    func passCellToTTPX(_ XuatLoHangTableViewCell: XuatLoHangTableViewCell)
 }

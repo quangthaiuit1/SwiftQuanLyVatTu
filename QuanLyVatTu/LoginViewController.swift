@@ -53,14 +53,14 @@ class LoginViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         GenericsStatic.CONTENT_TYPE = "application/x-www-form-urlencoded"
         GenericsStatic.TOKEN = "123"
 //        let headers: HTTPHeaders = [
-//            "Content-Type": VariablesStatic.CONTENT_TYPE,
-//            "database": VariablesStatic.CHI_NHANH,
+//            "Content-Type": GenericsStatic.CONTENT_TYPE,
+//            "database": GenericsStatic.CHI_NHANH,
 //        ]
 //        let params: [String: Any] = [
 //            "user": txtUsername.text!,
 //            "pass": txtPassword.text!
 //        ]
-//        let url = URL.url + "login"
+//        let url = GenericsStatic.URL + "login"
 //        Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
 //            switch response.result {
 //            case .success(let value):
@@ -75,6 +75,7 @@ class LoginViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
 //                    let indexScreen = sb.instantiateViewController(withIdentifier: "STIndex")
 //                    //Push màn hình lên
 //                    self.navigationController?.pushViewController(indexScreen, animated: true)
+////                    self.sendMessageZalo()
 //                }else{
 //                    self.labelLoginError.text = "Sai tên đăng nhập hoặc mật khẩu."
 //                }
@@ -90,7 +91,6 @@ class LoginViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
 //        //Push màn hình lên
         self.navigationController?.pushViewController(indexScreen, animated: true)
     }
-    
     
     // Chức năng chọn chi nhánh
     @IBAction func buttonOKChonChiNhanh(_ sender: Any) {

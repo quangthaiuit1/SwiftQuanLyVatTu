@@ -223,6 +223,8 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
                     }
                     alert.addAction(okAction)
                     self.present(alert,animated: true,completion: nil)
+                    //Gửi mess cho user
+//                    self.sendMessageZalo()
                 }
                 else {
                     //Tạo alert controller
@@ -233,6 +235,26 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
                     }
                     alert.addAction(okAction)
                     self.present(alert,animated: true,completion: nil)
+                }
+            case .failure(let error):
+                // Handler Login Failure
+                debugPrint(error)
+            }
+        }
+    }
+    //Bắn mess cho user
+    func sendMessageZalo(){
+        let url = "http://localhost:10080/new-mobile-3-2020/sendmessage"
+        Alamofire.request(url,method: .post).responseJSON{(response) in
+            switch response.result {
+            case .success(let value):
+                // Handler Login Successecode(Customer.self, from: jsonData!)
+                let rs = value as? NSDictionary
+                let error = rs!["error"]! as? Int
+                if error == 0 {
+                    print("Gửi tin nhắn thành công!")
+                }else{
+                    print("Gửi tin nhắn thất bại")
                 }
             case .failure(let error):
                 // Handler Login Failure

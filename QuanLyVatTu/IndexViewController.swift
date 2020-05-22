@@ -21,6 +21,7 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
             GenericsStatic.DEN_NGAY = self.getCurrentDateString()
             GenericsStatic.TU_NGAY = self.getLast7Days()
         }
+        //Tự động điền ngày hiện tại vào textField
         textFieldTuNgay.delegate = self
 //        //Chon ngay
         datePickerTuNgay = UIDatePicker()
@@ -44,7 +45,10 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
             textFieldTuNgay.text = dateFormatter.string(from: Date())
         }
         if  textFieldDenNgay.text!.isEmpty {
-             textFieldDenNgay.text = dateFormatter.string(from: Date())
+            var dateComponent = DateComponents()
+            dateComponent.day = +365
+            let last7DaysTemp = Calendar.current.date(byAdding: dateComponent, to: GenericsStatic.getCurrentDate())
+            textFieldDenNgay.text = dateFormatter.string(from: last7DaysTemp!)
         }
         return true
     }

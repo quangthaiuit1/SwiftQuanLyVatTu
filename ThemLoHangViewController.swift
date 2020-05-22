@@ -4,7 +4,7 @@ protocol sendDSLoHangToThongTinPNT {
     func sendData(DanhSachLohang lohangs: [LoHang], IndexPathClick index: Int, TongSoLuong tongSL: Double)
 }
 
-class ThemLoHangViewController: UIViewController {
+class ThemLoHangViewController: UIViewController, UITextFieldDelegate{
 
     
     @IBOutlet weak var textFieldMaLH: UITextField!
@@ -25,6 +25,8 @@ class ThemLoHangViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sử dụng UITexxtFielđelegate
+        textFieldNgayNhap.delegate = self
         //Chon ngay
         datePickerNgayNhap = UIDatePicker()
         datePickerNgayHetHan = UIDatePicker()
@@ -54,6 +56,20 @@ class ThemLoHangViewController: UIViewController {
     //Bỏ popup chọn ngày
     @objc func viewTapped(gestureRecognizer: UIGestureRecognizer){
         view.endEditing(true)
+    }
+    
+    //Set default current date for textfield date
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textFieldNgayNhap.text!.isEmpty {
+            textFieldNgayNhap.text = GenericsStatic.getDateFormatter().string(from: Date())
+        }
+        if  textFieldNgayHetHan.text!.isEmpty {
+            var dateComponent = DateComponents()
+            dateComponent.day = +365
+            let last7DaysTemp = Calendar.current.date(byAdding: dateComponent, to: GenericsStatic.getCurrentDate())
+            textFieldNgayHetHan.text = GenericsStatic.getDateFormatter().string(from: last7DaysTemp!)
+        }
+        return true
     }
     
     @IBAction func dismissThemLoHangTapped(_ sender: Any) {
