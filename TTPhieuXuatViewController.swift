@@ -3,9 +3,6 @@ import Alamofire
 
 class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PassDataToVC{
     
-//    var listPhieuXuatTamDetail = [ChiTietPhieuXuatTamAndLoHangXuat]()
-    
-    
     @IBOutlet weak var labelNoiNhan: UILabel!
     @IBOutlet weak var labelMaPhieu: UILabel!
     @IBOutlet weak var labelNgay: UILabel!
@@ -39,7 +36,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         }
         sendPostRequest()
     }
-       
+
     func passData(SoluongThucXuat soluong: Double, IndexPathCell indexPathThongTinPX: Int, Lohang lohang: [XuatLoHang]) {
         let indexPostion = IndexPath(row: indexPathThongTinPX, section: 0)
         chiTietPhieuXuatTam[indexPathThongTinPX].soluongThucXuat = soluong
@@ -185,7 +182,12 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         }
         xuatLoHangScreen.modalPresentationStyle = .overFullScreen
         xuatLoHangScreen.modalTransitionStyle = .crossDissolve
-        xuatLoHangScreen.dsLoHangXuats = chiTietPhieuXuatTam[sender.tag].loHangXuats
+        xuatLoHangScreen.chiTietPhieuXuatTam = chiTietPhieuXuatTam
+        //Tao phieu xuat tam gui di
+        let pxtTemp = PhieuXuatTam(idPhieuXuatTam!, ngay!, maphieu!, kho!, valueButtonDaXuat!, noinhan!)
+        xuatLoHangScreen.phieuXuatTam = pxtTemp
+        xuatLoHangScreen.index = sender.tag
+        xuatLoHangScreen.xuatLoHangDelegate = self
         present(xuatLoHangScreen, animated: true)
     }
     
@@ -197,8 +199,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    //Chưa xử lý xong
-    @IBAction func luuPhieuTapped(_ sender: Any) {
+    func handleLuuChiTietPXT() {
         let chiTietPhieuXuatTamSend = ChiTietPhieuXuatTamSend(idPhieuXuatTam!,ngay!,maphieu!,kho!,valueButtonDaXuat!,noinhan!, chiTietPhieuXuatTam)
         //Convert object to json
         let encodedData = try? JSONEncoder().encode(chiTietPhieuXuatTamSend)
@@ -212,7 +213,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
             "cm" : "luuphieuxuattam",
             "dt" : json!
         ]
-//        print(json!)
+        //        print(json!)
         let url = GenericsStatic.URL + "phieuxuattam"
         Alamofire.request(url,method: .post,parameters: params,headers: headers).responseJSON{(response) in
             switch response.result {
@@ -221,7 +222,7 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
                 let valueDictionary = value as? NSDictionary
                 let error = valueDictionary!["err"] as! Int
                 if error == 0 {
-                    let alert = UIAlertController(title: "Thông báo", message: "Lưu thành công!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Thông báo", message: "thành công!", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
                         print("Thành công!")
                     }
@@ -242,5 +243,18 @@ class TTPhieuXuatViewController: UIViewController, UITableViewDelegate, UITableV
                 debugPrint(error)
             }
         }
+    }
+    
+    //Chưa xử lý xong
+    @IBAction func luuPhieuTapped(_ sender: Any) {
+        handleLuuChiTietPXT()
+    }
+}
+
+extension TTPhieuXuatViewController: DanhSachLoHangVCDelegate {
+    func passSoLuongThucXuat(_ soluongThucXuat: Double, _ index: Int) {
+        //Cap nhat lai so luong thuc xuat
+        chiTietPhieuXuatTam[index].soluongThucXuat = soluongThucXuat
+        tableViewChiTietPXT.reloadData()
     }
 }

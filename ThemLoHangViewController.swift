@@ -1,9 +1,5 @@
 import UIKit
 
-protocol sendDSLoHangToThongTinPNT {
-    func sendData(DanhSachLohang lohangs: [LoHang], IndexPathClick index: Int, TongSoLuong tongSL: Double)
-}
-
 class ThemLoHangViewController: UIViewController, UITextFieldDelegate{
 
     
@@ -30,6 +26,8 @@ class ThemLoHangViewController: UIViewController, UITextFieldDelegate{
         //Chon ngay
         datePickerNgayNhap = UIDatePicker()
         datePickerNgayHetHan = UIDatePicker()
+        self.datePickerNgayNhap?.locale = GenericsStatic.locale
+        self.datePickerNgayHetHan?.locale = GenericsStatic.locale
         datePickerNgayNhap?.datePickerMode = .date
         datePickerNgayHetHan?.datePickerMode = .date
         datePickerNgayNhap?.addTarget(self, action: #selector(ThemLoHangViewController.dateChangedNgayNhap(datePicker:)), for: .valueChanged)
@@ -43,10 +41,7 @@ class ThemLoHangViewController: UIViewController, UITextFieldDelegate{
     }
     //Chon ngay nhap
        @objc func dateChangedNgayNhap(datePicker: UIDatePicker){
-        let dateFormatter = GenericsStatic.getDateFormatter()
-           
-            print(type(of: dateFormatter))
-           textFieldNgayNhap.text = dateFormatter.string(from: datePicker.date)
+        textFieldNgayNhap.text = GenericsStatic.getDateFormatter().string(from: datePicker.date)
            view.endEditing(true)
        }
        @objc func dateChangedNgayHetHan(datePicker: UIDatePicker){
@@ -119,4 +114,8 @@ class ThemLoHangViewController: UIViewController, UITextFieldDelegate{
             self.present(alert, animated: true)
         }
     }
+}
+//Protocol
+protocol sendDSLoHangToThongTinPNT {
+    func sendData(DanhSachLohang lohangs: [LoHang], IndexPathClick index: Int, TongSoLuong tongSL: Double)
 }

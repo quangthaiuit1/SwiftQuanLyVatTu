@@ -26,6 +26,9 @@ class IndexViewController: UIViewController, UITextFieldDelegate {
 //        //Chon ngay
         datePickerTuNgay = UIDatePicker()
         datePickerDenNgay = UIDatePicker()
+        //Datepicker tieng viet
+        self.datePickerTuNgay?.locale = GenericsStatic.locale
+        self.datePickerDenNgay?.locale = GenericsStatic.locale
         datePickerTuNgay?.datePickerMode = .date
         datePickerTuNgay?.addTarget(self, action: #selector(IndexViewController.dateChangedTuNgay(datePicker:)), for: .valueChanged)
         datePickerDenNgay?.datePickerMode = .date

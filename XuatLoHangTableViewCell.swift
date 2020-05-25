@@ -25,15 +25,19 @@ class XuatLoHangTableViewCell: UITableViewCell {
         self.labelSoLuong.text = String(describing: data.sllohang)
         self.labelId.text = String(describing: data.idlohang)
         self.labelNgayHetHan.text = data.ngayhethan
-//        self.buttonOkXuat.setImage(UIImage.init(named: "UnCheckbox"), for: .normal)
-//        self.buttonOkXuat.setImage(UIImage.init(named: "Checkbox"), for: .selected)
-        
         self.buttonOkXuat.addTarget(self, action: #selector(buttonOkTapped(_:)), for: .touchUpInside)
+        self.textFieldSoLuong.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: .editingDidEnd)
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    
+    @IBAction func textFieldEditingDidChange (_ sender: Any){
+        if delegateCell != nil {
+            self.delegateCell?.passCellToTTPX(self)
+        }
     }
     
     @IBAction func buttonOkTapped (_ sender: UIButton) {
@@ -49,7 +53,6 @@ class XuatLoHangTableViewCell: UITableViewCell {
     }
     
 }
-
 protocol XuatLohangTableViewCellDelegate: AnyObject {
     func passCellToTTPX(_ XuatLoHangTableViewCell: XuatLoHangTableViewCell)
 }

@@ -142,21 +142,51 @@ extension XuatLoHangViewController : XuatLohangTableViewCellDelegate {
                     self.present(thatBai, animated: true, completion: nil)
                 }else {
                     let id = Int(XuatLoHangTableViewCell.labelId.text!)
-                    let malh = XuatLoHangTableViewCell.labelMaLH.text!
-                    let ngaynhap = XuatLoHangTableViewCell.labelNgayNhap.text!
-                    let ngayhethan = XuatLoHangTableViewCell.labelNgayHetHan.text!
-                    
-                    let xuatLoHangTemp = XuatLoHang(id!,malh,ngaynhap,ngayhethan,soluong!)
-                    self.xuatLoHangsSend.append(xuatLoHangTemp)
-                    print("Thanh cong")
+                    if xuatLoHangsSend.count == 0 {
+                        let malh = XuatLoHangTableViewCell.labelMaLH.text!
+                        let ngaynhap = XuatLoHangTableViewCell.labelNgayNhap.text!
+                        let ngayhethan = XuatLoHangTableViewCell.labelNgayHetHan.text!
+                        
+                        let xuatLoHangTemp = XuatLoHang(id!,malh,ngaynhap,ngayhethan,soluong!)
+                        self.xuatLoHangsSend.append(xuatLoHangTemp)
+                        print("Thanh cong")
+                    }else {
+                        for i in xuatLoHangsSend {
+                            //check lo hang ton tai?
+                            if i.idlohang == id {
+                                //Neu da ton tai lo hang thi - so luong cu truoc do
+                                self.tongSoLuongThucXuat = self.tongSoLuongThucXuat! - i.sllohang
+                                i.sllohang = soluong!
+                            }else {
+                                let malh = XuatLoHangTableViewCell.labelMaLH.text!
+                                let ngaynhap = XuatLoHangTableViewCell.labelNgayNhap.text!
+                                let ngayhethan = XuatLoHangTableViewCell.labelNgayHetHan.text!
+                                
+                                let xuatLoHangTemp = XuatLoHang(id!,malh,ngaynhap,ngayhethan,soluong!)
+                                self.xuatLoHangsSend.append(xuatLoHangTemp)
+                            }
+                        }
+
+                    }
                 }
             }else{
                 print("That bai")
             }
         }
         //else sẽ xử lý nếu nút bỏ chọn sẽ remove item ra khỏi list
+        else {
+            let soluong = Double(XuatLoHangTableViewCell.textFieldSoLuong.text!)
+            let id = Int(XuatLoHangTableViewCell.labelId.text!)
+            for i in 0..<xuatLoHangsSend.count {
+                if id == xuatLoHangsSend[i].idlohang {
+                    xuatLoHangsSend.remove(at: i)
+                    self.tongSoLuongThucXuat = tongSoLuongThucXuat! - soluong!
+                }
+            }
+        }
     }
 }
+
 
 protocol PassDataToVC {
     func passData(SoluongThucXuat soluong: Double, IndexPathCell indexPathThongTinPX: Int, Lohang lohang: [XuatLoHang])

@@ -165,7 +165,7 @@ class PhieuXuatTamViewController: UIViewController, UITableViewDataSource, UITab
                 if error == 0 {
                     let alert = UIAlertController(title: "Thông báo", message: "Thành công!", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-                        self.tableViewPhieuXuatTam.reloadData()
+                        self.sendPostRequest()
                     }
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)

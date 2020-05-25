@@ -31,9 +31,4 @@ class DanhSachLoHangTableViewCell: UITableViewCell {
             self.buttonDelete.setImage(UIImage.init(named: "delete24_1"), for: .normal)
         }
     }
-    
-    @IBAction func deleteTapped(_ sender: Any) {
-    
-    }
-    
 }

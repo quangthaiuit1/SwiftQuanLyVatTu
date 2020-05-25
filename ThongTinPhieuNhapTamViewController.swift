@@ -11,7 +11,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
     //Danh sách lô hàng vừa được thêm bên view thêm lô hàng
     var lohangsSendDanhSachLoHang = [LoHang]()
     //Danh sách Phiếu nhập tạm details
-    var listPhieuNhapTamDetail = [ChiTietPhieuNhapTamAndLoHang]()
+    var listPhieuNhapTamDetail = [ChiTietPhieuNhapTam]()
 
     @IBOutlet private weak var labelNhaCungCap: UILabel!
     @IBOutlet private weak var labelMaPhieu: UILabel!
@@ -54,13 +54,22 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
         chitietPhieunhaptams[index].soluongThucte = chitietPhieunhaptams[index].soluongThucte + tongSL
         //Thêm lô hàng mới tạo vào lô hàng cũ
         for i in lohangs {
-            chitietPhieunhaptams[index].loHangs.append(i)
+            if chitietPhieunhaptams[index].loHangs.count == 0 {
+                chitietPhieunhaptams[index].loHangs.append(i)
+            }
+            else {
+                for j in 0..<chitietPhieunhaptams[index].loHangs.count {
+                    //check mã lô. hàng có bị trùng hay không
+                    if i.malh == chitietPhieunhaptams[index].loHangs[j].malh {
+                        chitietPhieunhaptams[index].loHangs[j].sllohang = chitietPhieunhaptams[index].loHangs[j].sllohang + i.sllohang
+                    }else {
+                        chitietPhieunhaptams[index].loHangs.append(i)
+                    }
+                }
+            }
         }
         tableViewThongTinPhieuNhapTam.reloadRows(at: [indexPostion], with: .none)
         lohangsSendDanhSachLoHang = lohangs
-        
-        let phieuNhapTamDetailsTemp = ChiTietPhieuNhapTamAndLoHang(chitietPhieunhaptams[index].id, chitietPhieunhaptams[index].maVatTu,chitietPhieunhaptams[index].tenVatTu,chitietPhieunhaptams[index].soluongChungtu,chitietPhieunhaptams[index].soluongThucte,chitietPhieunhaptams[index].loHangs)
-        listPhieuNhapTamDetail.append(phieuNhapTamDetailsTemp)
     }
     
     func sendPostMethod(){
@@ -179,7 +188,11 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
         danhSachLoHangScreen.idPhieuNhapTam = self.idPhieuNhapTam
         danhSachLoHangScreen.idChiTietPhieuNhap = self.chitietPhieunhaptams[sender.tag].id
         danhSachLoHangScreen.lohangsReceivedFromThongTinPNT = self.lohangsSendDanhSachLoHang
-        danhSachLoHangScreen.lohangs = self.chitietPhieunhaptams[sender.tag].loHangs
+        //pass Chi tiet phieu nhap tam den Danh sach lo hang
+        danhSachLoHangScreen.index = sender.tag
+        danhSachLoHangScreen.chitietPhieunhaptams = self.chitietPhieunhaptams
+        let phieuNhapTamTemp = PhieuNhapTam(idPhieuNhapTam!, txtNgayNhap!, txtMaPhieu!, txtLoaiPhieu!, valueButtonDaTao!, valueButtonKiemTra!, txtNhaCungCap!)
+        danhSachLoHangScreen.phieuNhapTam = phieuNhapTamTemp
         present(danhSachLoHangScreen, animated: true)
     }
     @IBAction func buttonLuuPhieuTapped(_ sender: Any) {
@@ -191,7 +204,7 @@ class ThongTinPhieuNhapTamViewController: UIViewController, UITableViewDelegate,
         let nhacungcap = txtNhaCungCap!
         let kiemtra = valueButtonKiemTra!
         
-        let chiTietPhieuNhapTamSend = ChiTietPhieuNhapTamSend(id,ngay,maphieu,loaiphieu,dataolohang,kiemtra,nhacungcap, listPhieuNhapTamDetail)
+        let chiTietPhieuNhapTamSend = ChiTietPhieuNhapTamSend(id,ngay,maphieu,loaiphieu,dataolohang,kiemtra,nhacungcap, chitietPhieunhaptams)
         
         //Convert object to json
         let encodedData = try? JSONEncoder().encode(chiTietPhieuNhapTamSend)

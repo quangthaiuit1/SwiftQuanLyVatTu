@@ -8,7 +8,7 @@ class GenericsStatic {
     
     static var TU_NGAY = "09/01/2020"
     static var DEN_NGAY = "09/12/2020"
-    
+    static let locale = Locale(identifier: "vi")
     static func getCurrentDate () -> Date{
         return Date()
     }

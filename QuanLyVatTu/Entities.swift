@@ -1,6 +1,6 @@
 import Foundation
 
-struct XuatLoHang: Codable {
+class XuatLoHang: Codable {
     var idlohang: Int
     var ngaynhap: String
     var malh: String
@@ -54,7 +54,7 @@ struct PhieuNhapTam: Codable {
     }
 }
 
-struct ChiTietPXT: Codable {
+class ChiTietPXT: Codable {
     var id: Int
     var maVatTu: String
     var tenVatTu: String
@@ -98,7 +98,7 @@ struct ChiTietPhieuXuatTamSend: Codable {
 }
 
 
-struct LoHang: Codable {
+class LoHang: Codable {
     var id: Int
     var malh: String
     var ngaynhap: String
@@ -116,7 +116,7 @@ struct LoHang: Codable {
     }
 }
 
-struct ChiTietPhieuNhapTam: Codable {
+class ChiTietPhieuNhapTam: Codable {
     var id: Int
     var maVatTu: String
     var tenVatTu: String
@@ -137,7 +137,7 @@ struct ChiTietPhieuNhapTam: Codable {
 
 // Json phiếu nhập tạm
 
-struct ChiTietPhieuNhapTamSend: Codable{
+class ChiTietPhieuNhapTamSend: Codable{
     //Phieu nhập tạm
     var id: Int
     var ngay: String
@@ -147,9 +147,9 @@ struct ChiTietPhieuNhapTamSend: Codable{
     var nhacungcap: String
     var kiemtra: Bool
     
-    var phieuNhapTamDetails: [ChiTietPhieuNhapTamAndLoHang]
+    var phieuNhapTamDetails: [ChiTietPhieuNhapTam]
     
-    init(_ id: Int,_ ngay: String, _ maphieu: String,_ loaiphieu: String,_ dataolohang: Bool,_ kiemtra: Bool ,_ nhacungcap: String, _ phieuNhapTamDetails: [ChiTietPhieuNhapTamAndLoHang]) {
+    init(_ id: Int,_ ngay: String, _ maphieu: String,_ loaiphieu: String,_ dataolohang: Bool,_ kiemtra: Bool ,_ nhacungcap: String, _ phieuNhapTamDetails: [ChiTietPhieuNhapTam]) {
         
         self.id = id
         self.ngay = ngay
@@ -162,7 +162,7 @@ struct ChiTietPhieuNhapTamSend: Codable{
         self.phieuNhapTamDetails = phieuNhapTamDetails
     }
 }
-struct ChiTietPhieuNhapTamAndLoHang: Codable {
+class ChiTietPhieuNhapTamAndLoHang: Codable {
     //Chi tiết phiếu nhập
     var id: Int
     var mavt: String
