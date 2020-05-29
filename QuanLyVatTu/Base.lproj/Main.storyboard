@@ -375,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pch-10-xh2">
-                                <rect key="frame" x="0.0" y="16" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPhieuNhapTam" rowHeight="155" id="ZCj-gK-tZ0" customClass="PhieuNhapTamTableViewCell" customModule="QuanLyVatTu" customModuleProvider="target">
@@ -614,7 +614,7 @@
                             <constraint firstItem="pch-10-xh2" firstAttribute="leading" secondItem="gjI-j4-3fY" secondAttribute="leading" id="3YA-0g-UA8"/>
                             <constraint firstItem="hbT-PO-2xg" firstAttribute="top" secondItem="pch-10-xh2" secondAttribute="bottom" constant="5" id="5Vm-MQ-8ED"/>
                             <constraint firstItem="hbT-PO-2xg" firstAttribute="top" relation="lessThanOrEqual" secondItem="pch-10-xh2" secondAttribute="bottom" constant="5" id="5kh-JT-B2M"/>
-                            <constraint firstItem="pch-10-xh2" firstAttribute="top" secondItem="gjI-j4-3fY" secondAttribute="top" constant="16" id="Hgh-y1-yfx"/>
+                            <constraint firstItem="pch-10-xh2" firstAttribute="top" secondItem="gjI-j4-3fY" secondAttribute="top" id="Hgh-y1-yfx"/>
                             <constraint firstItem="hbT-PO-2xg" firstAttribute="leading" secondItem="gjI-j4-3fY" secondAttribute="leading" constant="100" id="JSG-j3-cOE"/>
                             <constraint firstItem="gjI-j4-3fY" firstAttribute="trailing" secondItem="hbT-PO-2xg" secondAttribute="trailing" constant="100" id="gZZ-oM-Koz"/>
                             <constraint firstItem="gjI-j4-3fY" firstAttribute="bottom" secondItem="hbT-PO-2xg" secondAttribute="bottom" constant="5" id="tOD-gZ-MDY"/>
@@ -1410,7 +1410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WIj-cB-6fu">
-                                <rect key="frame" x="0.0" y="16" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPhieuXuatTam" rowHeight="142" id="i7B-Hv-ole" customClass="PhieuXuatTamTableViewCell" customModule="QuanLyVatTu" customModuleProvider="target">
@@ -1631,7 +1631,7 @@
                             <constraint firstItem="A1m-FK-uuj" firstAttribute="trailing" secondItem="l0E-uD-92j" secondAttribute="trailing" constant="100" id="0Hk-qB-QzG"/>
                             <constraint firstItem="l0E-uD-92j" firstAttribute="leading" secondItem="A1m-FK-uuj" secondAttribute="leading" constant="100" id="App-Fy-1pa"/>
                             <constraint firstItem="A1m-FK-uuj" firstAttribute="bottom" secondItem="l0E-uD-92j" secondAttribute="bottom" constant="5" id="HMV-ur-ECb"/>
-                            <constraint firstItem="WIj-cB-6fu" firstAttribute="top" secondItem="A1m-FK-uuj" secondAttribute="top" constant="16" id="OLk-c7-1Pd"/>
+                            <constraint firstItem="WIj-cB-6fu" firstAttribute="top" secondItem="A1m-FK-uuj" secondAttribute="top" id="OLk-c7-1Pd"/>
                             <constraint firstItem="WIj-cB-6fu" firstAttribute="leading" secondItem="A1m-FK-uuj" secondAttribute="leading" id="W9I-Tl-Q7t"/>
                             <constraint firstItem="l0E-uD-92j" firstAttribute="top" secondItem="WIj-cB-6fu" secondAttribute="bottom" constant="5" id="e60-5R-HJh"/>
                             <constraint firstItem="A1m-FK-uuj" firstAttribute="trailing" secondItem="WIj-cB-6fu" secondAttribute="trailing" id="oiy-3z-AAD"/>
